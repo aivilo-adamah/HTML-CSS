@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>inscript</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<d rel="stylesheet" href="https://open-source.extive.eu/micro-interaction-theme.css">
+<link rel="stylesheet" href="styl.css">
+
+    </head>
+    <body>
+   <!---<button>
+
+        <a href="inscription.html" title="ma page d'inscription">Inscription</a>
+        <br/>  
+    </!---<button>-->   
+
+
+<!--<button ondblclick="onclick()" id="button">click me</!--<button>
+<p id="para"></p>--->
+
+ 
+ <fieldset id="tab">
+    <table id="tab">
+        
+        <input type="text" onkeydown="saisie()">
+        <p id="donne">le texte</p>
+        <input type="text" onclick="saisie()">
+        <p id="donne">mettez ici</p>
+        <table< type="text" onkeypress="donner()">
+        <p id="glou"> ceci est le texte</p>
+        
+        
+       <!---<button onclick="ondoubl()" id="clic"></!---<button>--->
+        <label>votre mail</label>
+        <input type="text" id="mail">
+        <button onclick="ondoubl()" id="clic">valider</button>
+        <label>votre numéro de tel</label>
+        <input type="text" id="tel">
+        
+
+    </table</fieldset>
+
+
+
+
+    
+<script>
+    function onclick(){
+        let p=document.getElementById("para");
+        //p.textContent+="click at\n";
+        p.innerHTML+="click at <br>";
+    }
+
+
+   /*function ondoubl(){
+    let a=document.getElementById("ici");
+    a.innerHTML+="double clik ici </br>";
+
+   }*/
+    function saisie(){
+    let b=document.getElementById("donne");
+    b.innerHTML+="donner le texte <br>";
+    }
+
+
+    function donner(){
+        let cpt=document.getElementById("glou");
+        cpt.innerHTML+="mettez le texte ici <br>";
+    }
+
+
+    let btns=document.querySelector('button');
+    console.log(btns);
+    btns.onclick=function(oli){
+        console.log(oli);
+    }
+    btns.addEventListener("click",function(e){
+    btns.style.color="red";
+    btns.style.backgroundColor="blue";
+    },false); 
+
+</script>
+    <script>
+        
+    let inp=document.getElementById("mail");
+    //let btn=document.getElementById("mail");
+
+    let btn=document.querySelector("button");
+    btn.addEventListener("click",function(){
+        let saisie=inp.value;
+        if(saisie.trim()!=""){
+
+        
+        if(/^[a-zA-Z0-9]{3,}@[a-zA-Z0-9]{3,15}\.[a-zA-Z]{2,5}$/.test(saisie)){
+ 
+    alert("ok");
+        }
+    else{
+        alert("incorect");
+    }
+}
+},false);
+
+    let num=document.getElementById("tel");
+    let n=document.getElementById("tel");
+    n.addEventListener("dblclick",function(){
+        let numéro=num.value;
+        if(numéro.trim()!=""){
+            //if(/^\+228\ 9[0-9]{1}\ [0-9]{2}\ [0-9]{2}\ [0-9]{2}$/.test(numéro)){
+           if(/^\+228\ 9[0-9]{1}\-[0-9]{2}\-[0-9]{2}\-[0-9]{2}$/.test(numéro)){
+
+            alert("c'est valide");
+        }
+            else{
+                alert("ceci n'est pas valide");
+            }
+        }
+        
+        
+    },false);
+
+    </script>
+
+
+
+
+
+   
+ 
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
